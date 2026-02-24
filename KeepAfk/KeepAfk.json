@@ -1,0 +1,9 @@
+{
+  "Author": "Twinki Toes",
+  "Name": "KeepAfk",
+  "InternalName": "KeepAfk",
+  "Description": "Blocking Inputs to prevent the game from removing the AFK status.",
+  "ApplicableVersion": "any",
+  "Tags": [ "afk", "utility", "input" ],
+  "Punchline": "Stay AFK forever."
+}
