@@ -1,7 +1,8 @@
 using Dalamud.Bindings.ImGui;
 using Dalamud.Game.ClientState.Keys;
+using Dalamud.Interface.Utility;
+using Dalamud.Interface.Utility.Raii;
 using Dalamud.Interface.Windowing;
-using Dalamud.Bindings.ImGui;
 using System;
 using System.Linq;
 using System.Numerics;
@@ -55,7 +56,7 @@ namespace KeepAfk
 
                 if (ImGui.BeginCombo("##KeySelect", selectedKeyToAdd.ToString()))
                 {
-                    foreach (VirtualKey key in Enum.GetValues(typeof(VirtualKey)))
+                    foreach (var key in Enum.GetValues<VirtualKey>())
                     {
                         if (ImGui.Selectable(key.ToString(), key == selectedKeyToAdd))
                         {
@@ -75,18 +76,22 @@ namespace KeepAfk
                     }
                 }
 
-                ImGui.BeginChild("KeyList", new Vector2(300, 150), true);
-                foreach (var key in currentActiveList.ToList())
+                using (var child = ImRaii.Child("KeyList", new Vector2(300, 150) * ImGuiHelpers.GlobalScale, true))
                 {
-                    ImGui.Text(key.ToString());
-                    ImGui.SameLine(200);
-                    if (ImGui.Button($"Remove##{key}"))
+                    if (child)
                     {
-                        currentActiveList.Remove(key);
-                        Configuration.Save();
+                        foreach (var key in currentActiveList.ToList())
+                        {
+                            ImGui.Text(key.ToString());
+                            ImGui.SameLine(200 * ImGuiHelpers.GlobalScale);
+                            if (ImGui.Button($"Remove##{key}"))
+                            {
+                                currentActiveList.Remove(key);
+                                Configuration.Save();
+                            }
+                        }
                     }
                 }
-                ImGui.EndChild();
             }
         }
     }

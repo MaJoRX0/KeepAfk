@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Dalamud.NET.Sdk/14.0.1">
   <PropertyGroup>
-    <Authors>Twinki Toes</Authors>
+    <Authors>MaJoRX0</Authors>
     <Version>1.0.0.0</Version>
-    <PackageProjectUrl>https://github.com/goatcorp/SamplePlugin</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/MaJoRX0/KeepAfk.git</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>
-    <TargetFramework>net10.0-windows</TargetFramework>
-    <IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>

@@ -18,7 +18,7 @@ namespace KeepAfk
 
         public HashSet<VirtualKey> FilteredKeys { get; set; } = new()
         {
-            VirtualKey.RETURN,
+            VirtualKey.RETURN,   // Enter key
             VirtualKey.W,
             VirtualKey.A,
             VirtualKey.S,

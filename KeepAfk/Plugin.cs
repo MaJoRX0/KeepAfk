@@ -9,8 +9,6 @@ namespace KeepAfk
 {
     public sealed class KeepAfk : IDalamudPlugin
     {
-        public string Name => "KeepAfk";
-
         private IDalamudPluginInterface PluginInterface { get; init; }
         private IKeyState KeyState { get; init; }
         private IFramework Framework { get; init; }
@@ -65,7 +63,7 @@ namespace KeepAfk
 
         private void DrawConfigUI()
         {
-            ConfigWindow.IsOpen = !ConfigWindow.IsOpen;
+            ConfigWindow.Toggle();
         }
 
         private unsafe void OnFrameworkUpdate(IFramework framework)
