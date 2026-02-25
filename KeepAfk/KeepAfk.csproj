@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-      <Content Include="..\Images\Icon.png">
+      <Content Include="..\images\icon.png">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
           <Visible>false</Visible>
       </Content>  </ItemGroup>
